@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import {
   default as React,
@@ -7,7 +7,7 @@ import {
 } from 'react';
 
 import D3Axis from 'd3-axis';
-import D3Selection from 'd3-selection'
+import D3Selection from 'd3-selection';
 import ReactFauxDOM from 'react-faux-dom';
 import {scale} from '../utils/scale';
 
@@ -41,7 +41,7 @@ export default class Axis extends Component {
       tickPadding,
       tickSizeInner,
       tickSizeOuter,
-      ticks,
+      ticks
     } = this.props;
 
     var func = D3Axis;
@@ -50,11 +50,11 @@ export default class Axis extends Component {
     if(tickOrient === 'left') {
       func = func.axisLeft(this._mkScale(this.props));
     }else if (tickOrient === 'right') {
-      func = func.axisRight(this._mkScale(this.props))
+      func = func.axisRight(this._mkScale(this.props));
     }else if (tickOrient === 'top') {
-      func = func.axisTop(this._mkScale(this.props))
+      func = func.axisTop(this._mkScale(this.props));
     }else if (tickOrient === 'bottom') {
-      func = func.axisBottom(this._mkScale(this.props))
+      func = func.axisBottom(this._mkScale(this.props));
     }
 
     if(tickFormat)
@@ -77,12 +77,12 @@ export default class Axis extends Component {
   }
 
   _mkScale () {
-    var newScale
+    var newScale;
 
     if(this.props.scale === 'ordinal')
-      newScale = 'band'
+      newScale = 'band';
     else
-      newScale = this.props.scale
+      newScale = this.props.scale;
 
     var func = scale(Object.assign({}, this.props, {scale: newScale}));
 
@@ -101,13 +101,14 @@ export default class Axis extends Component {
     } = this.props;
 
     var axisGroup = ReactFauxDOM.createElement('g');
+    var axisClasses;
 
     if(type === 'x')
-      var axisClasses = `${axisClassName} axis x`
+      axisClasses = `${axisClassName} axis x`;
     else if(type === 'y')
-      var axisClasses = `${axisClassName} axis y`
+      axisClasses = `${axisClassName} axis y`;
     else if(type === 'gridx' || type === 'gridy')
-      var axisClasses = `${gridAxisClassName} grid-axis`
+      axisClasses = `${gridAxisClassName} grid-axis`;
 
     axisGroup.setAttribute('class', axisClasses);
 
@@ -116,13 +117,13 @@ export default class Axis extends Component {
     axisDom.call(this._mkTickAxis());
 
     if(!showAxis) {
-      axisDom.selectAll(".grid-axis .tick text")
-        .style("opacity", "0")
+      axisDom.selectAll('.grid-axis .tick text')
+        .style('opacity', '0');
 
       if(type === 'gridx' || type === 'gridy') {
         // hide domain in grids
-        axisDom.selectAll(".grid-axis .domain")
-          .style("opacity", "0")
+        axisDom.selectAll('.grid-axis .domain')
+          .style('opacity', '0');
       }
     }
 
@@ -141,10 +142,10 @@ export default class Axis extends Component {
       .style('opacity', .2)
       .style('fill', 'none')
       .style('stroke', '#000')
-      .style('stroke-width', '1.5px')
+      .style('stroke-width', '1.5px');
 
     axisDom.selectAll('.axis path')
-      .style('display', 'none')
+      .style('display', 'none');
 
     // Hide the specified ticks
     axisDom.selectAll('.axis .tick')
