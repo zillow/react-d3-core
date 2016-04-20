@@ -26,6 +26,7 @@ export default class Xaxis extends Component {
     xInnerTickSize: 6,
     xOuterTickSize: 6,
     xTickExclude: [],
+    xTickValues: null,
     ...CommonProps
   }
 
@@ -49,7 +50,8 @@ export default class Xaxis extends Component {
     xTickFormat: PropTypes.func,
     xTicks: PropTypes.array,
     xTickExclude: PropTypes.array,
-    style: PropTypes.object
+    style: PropTypes.object,
+    xTickValues: PropTypes.array
   }
 
   render() {
@@ -76,7 +78,8 @@ export default class Xaxis extends Component {
       xLabelPosition,
       labelOffset,
       style,
-      xTickExclude
+      xTickExclude,
+      xTickValues
     } = this.props;
 
     var t;
@@ -131,6 +134,7 @@ export default class Xaxis extends Component {
           ticks = {xTicks}
           style = {style}
           tickExclude = {xTickExclude}
+          tickValues = {xTickValues}
           />
         {axisLabel}
       </g>

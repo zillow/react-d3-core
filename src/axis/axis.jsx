@@ -22,7 +22,8 @@ export default class Axis extends Component {
     domain: null,
     tickFormat: null,
     tickOrient: null,
-    tickExclude: []
+    tickExclude: [],
+    tickValues: null
   }
 
   static PropTypes = {
@@ -30,7 +31,8 @@ export default class Axis extends Component {
     type: PropTypes.string,
     orient: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     tickOrient: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-    tickExclude: PropTypes.array
+    tickExclude: PropTypes.array,
+    tickValues: PropTypes.array
   }
 
   _mkTickAxis () {
@@ -41,11 +43,11 @@ export default class Axis extends Component {
       tickPadding,
       tickSizeInner,
       tickSizeOuter,
-      ticks
+      ticks,
+      tickValues
     } = this.props;
 
     var func = D3Axis;
-
 
     if(tickOrient === 'left') {
       func = func.axisLeft(this._mkScale(this.props));
@@ -71,6 +73,9 @@ export default class Axis extends Component {
 
     if(ticks)
       func.ticks.apply(null, ticks);
+
+    if(tickValues)
+      func.tickValues(tickValues);
 
     return func;
 
