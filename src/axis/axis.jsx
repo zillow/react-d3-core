@@ -144,10 +144,7 @@ export default class Axis extends Component {
       .style('shape-rendering', 'crispEdges');
 
     axisDom.selectAll('.grid-axis line')
-      .style('opacity', .2)
-      .style('fill', 'none')
-      .style('stroke', '#000')
-      .style('stroke-width', '1.5px');
+      .style('fill', 'none');
 
     axisDom.selectAll('.axis path')
       .style('display', 'none');
