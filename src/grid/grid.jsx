@@ -17,6 +17,8 @@ export default class Grid extends Component {
   static defaultProps = {
     type: 'x',
     gridAxisClassName: 'react-d3-core__grid_axis',
+    xTickValues: null,
+    yTickValues: null,
     ...CommonProps
   }
 
@@ -37,7 +39,9 @@ export default class Grid extends Component {
     yRange: PropTypes.array,
     yScale: PropTypes.oneOf(['linear', 'identity', 'sqrt', 'pow', 'log', 'quantize', 'quantile', 'ordinal', 'time']).isRequired,
     yBandPaddingInner: PropTypes.number,
-    yBandPaddingOuter: PropTypes.number
+    yBandPaddingOuter: PropTypes.number,
+    xTickValues: PropTypes.array,
+    yTickValues: PropTypes.array
   }
 
   render() {
@@ -59,7 +63,9 @@ export default class Grid extends Component {
       y,
       yDomain,
       yRange,
-      yScale
+      yScale,
+      xTickValues,
+      yTickValues
     } = this.props;
 
     var gridAxis;
@@ -98,6 +104,7 @@ export default class Grid extends Component {
         domain = {xDomain}
         range = {xRange}
         scale = {xScale}
+        tickValues = {xTickValues}
         />;
     } else if(type === 'y') {
       t = 'translate(0, 0)';
@@ -123,6 +130,7 @@ export default class Grid extends Component {
         scale = {yScale}
         domain = {yDomain}
         range = {yRange}
+        tickValues = {yTickValues}
         />;
     }
 
