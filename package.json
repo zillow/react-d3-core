@@ -3,7 +3,9 @@
   "version": "1.2.8",
   "description": "react-d3 chart core component",
   "main": "./lib/index.js",
+  "files": ["lib"],
   "scripts": {
+    "prepublish": "npm run build",
     "lint": "eslint **/*.js **/*.jsx",
     "test": "karma start",
     "build": "rm -rf ./lib && BABEL_ENV=production ./node_modules/.bin/babel ./src --out-dir ./lib",
