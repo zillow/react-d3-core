@@ -83,7 +83,7 @@ export default class Legend extends Component {
       .selectAll('div')
       .data(series)
     .enter().append('div')
-      .attr('class', `${legendClassName} legend`)
+      .attr('class', `${legendClassName}`)
       .style('height', 20)
       .style('padding', 5)
       .style('background-color', backgroundColor)
@@ -114,7 +114,7 @@ export default class Legend extends Component {
     } = this.props;
 
     const legendGroup = ReactFauxDOM.createElement('div');
-    const legendClasses = `${legendClassName} legend`;
+    const legendClasses = `${legendClassName}`;
 
     legendGroup.setAttribute('class', legendClasses);
     legendGroup.style.width = width;
