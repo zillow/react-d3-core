@@ -20,7 +20,7 @@ This is a fork of [react-d3/react-d3-core](https://github.com/react-d3/react-d3-
 
 **Contributors**, please do not adjust code style so the original project and this fork can more easily share updates from each other.
 
-This fork is based on v1.2.8 of the original project. The first version of this fork was v1.0.0.
+This fork is based on v1.2.8 of the original project. The first version of this fork was v1.3.0.
 
 ## Install
 
