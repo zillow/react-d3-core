@@ -1,8 +1,6 @@
-# react-d3-core
+# @zillow/react-d3-core
 
 [![Dependency Status](https://gemnasium.com/react-d3/react-d3-core.svg)](https://gemnasium.com/react-d3/react-d3-core)
-
-**Note: This is a fork! Versions diverged starting at 1.3.0**
 
 react d3 core components for reusability.
 
@@ -10,6 +8,19 @@ react d3 core components for reusability.
 
 Such as we need xaxis, yaxis, grid in a new chart.  We can install `react-d3-core` and import them.
 
+## Fork Alert!
+
+This is a fork of [react-d3/react-d3-core](https://github.com/react-d3/react-d3-core), containing additional options and features including:
+
+- Legend swatch size options
+- X label inline positioning
+- X tick exclusion options
+- Linting
+- Various bug fixes
+
+**Contributors**, please do not adjust code style so the original project and this fork can more easily share updates from each other.
+
+This fork is based on v1.2.8 of the original project. The first version of this fork was v1.0.0.
 
 ## Install
 
